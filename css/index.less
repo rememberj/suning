@@ -1,0 +1,230 @@
+@charset "utf-8";
+//变量
+@mainColor:#fabc09;
+
+//mixin
+.px2rem(@px){
+  @media screen and (min-width:@px) {
+    html{
+      font-size: @px/750*100;    
+    }
+  }
+}
+html{
+  font-size:42.66666667px;;
+}
+/*样式 rem 适配*/
+.px2rem(320px);
+.px2rem(360px);
+.px2rem(375px);
+.px2rem(384px);
+.px2rem(400px);
+.px2rem(414px);
+.px2rem(424px);
+.px2rem(480px);
+.px2rem(540px);
+.px2rem(640px);
+.px2rem(720px);
+.px2rem(750px);
+
+/*公用样式*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #333;
+  text-decoration: none;
+}
+input,textarea{
+  border:none;
+  outline: none;
+  resize: none;
+  -webkit-appearance:none;
+}
+.clearfix::before,.clearfix::after{
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  clear: both;
+}
+/*版心*/
+.sn_layout{
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-top: 90/100rem;
+}
+/*模块*/
+/*搜索*/
+.sn_search{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  height: 90/100rem;
+  width: 100%;
+  background: @mainColor;
+  a{
+    position: absolute;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 90/100rem;
+    height: 90/100rem;
+  }
+  .icon_logo{
+    left: 0;
+    background-image: url("../images/icon_category.png");
+    background-size:44/100rem 70/100rem;
+  }
+  .icon_cart{
+    right: 0;
+    background-image: url("../images/icon_cart.png");
+    background-size:63/100rem 68/100rem;
+  }
+  form{
+    width: 100%;
+    height: 90/100rem;
+    padding:0 90/100rem;
+    position: relative;
+    input{
+      height: 60/100rem;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      border-radius: 4/100rem;
+      margin-top: 15/100rem;
+      font-size: 24/100rem;
+      padding-left: 60/100rem;
+    }
+    .icon_search{
+      background-image: url("../images/icon_search.png");
+      background-size:27/100rem 28/100rem;
+      width: 27/100rem;
+      height: 28/100rem;
+      position: absolute;
+      top: 30/100rem;
+      left: 110/100rem;
+    }
+  }
+}
+
+/*轮播图*/
+.swiper-container img{
+  width: 100%;
+  display: block;
+}
+.sn_banner{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  ul:first-child{
+    width: 800%;
+    li{
+      float: left;
+      width: 12.5%;
+      a{
+        display: block;
+        img{
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+  ul:last-child{
+    position: absolute;
+    bottom: 20/100rem;
+    right: 50/100rem;
+    height: 12/100rem;
+    li{
+      width: 12/100rem;
+      height: 12/100rem;
+      border-radius: 50%;
+      background: #fff;
+      float: left;
+      margin-left: 12/100rem;
+      &.now{
+        background: @mainColor;
+      }
+    }
+  }
+}
+/*导航栏*/
+.sn_nav{
+  ul{
+    padding-top: 0.2rem;
+    li{
+      width: 100/5%;
+      float: left;
+      a{
+        display: block;
+        width: 100%;
+        float: left;
+        img{
+          display: block;
+          width: 80/100rem;
+          height: 80/100rem;
+          margin: 0 auto;
+        }
+        p{
+          line-height: 36/100rem;
+          font-size: 24/100rem;
+          text-align: center;
+          margin: 0;
+          padding: 0.1rem;
+        }
+      }
+    }
+  }
+}
+/*页签栏*/
+.sn_tab{
+  height: 1rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 2/100rem #d8d8d8;
+  background: #fff;
+  ul{
+    height: 100%;
+    li{
+      width: 100/5%;
+      float: left;
+      padding: 10/100rem 0;
+      a{
+        display: block;
+        height: 1rem;
+        text-align: center;
+        &:hover{
+          color: @mainColor;
+        }
+        div{
+          font-size: 0.5rem;
+        }
+        p{
+          margin: 0;
+          padding: 5/100rem;
+          font-size: 20/100rem;
+        }
+      }
+    }
+  }
+}
+
+
